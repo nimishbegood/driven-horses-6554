@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/bfb780cc74.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="./Untitledfavicon.png" type="image/icon type">
+
+    <title>Welcome to J.Crew</title>
+</head>
+<style>
+    body {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    
+    #navbar {
+        width: 100%;
+        padding: 0 25px;
+        margin: -8px auto 0;
+        height: 60px;
+        border-bottom: 1px solid silver;
+        align-items: center;
+        display: flex;
+        gap: 40px;
+        font-size: 14px;
+        z-index: 10px;
+        position: fixed;
+        background-color: white;
+    }
+    
+    #logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 114px;
+        /* border: 1px solid teal; */
+    }
+    
+    #logo>img {
+        height: 30px;
+        width: 114px;
+        /* border: 1px solid red; */
+    }
+    
+    #menu {
+        /* border: 1px solid red; */
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        height: 100%;
+        margin-right: 120px;
+    }
+    
+    #menu>div {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        /* border: 1px solid red; */
+    }
+    
+    #menu>div:last-of-type {
+        color: #DC3737;
+    }
+    
+    #menu>div:last-of-type:hover {
+        border-bottom: 2px solid #DC3737;
+    }
+    
+    #menu>div:hover {
+        border-bottom: 2px solid black;
+    }
+    
+    #search {
+        border: 1px solid silver;
+        height: 36px;
+        width: 200px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        color: grey;
+        padding: 0 12px;
+    }
+    
+    #search:hover {
+        border: 1px solid black;
+    }
+    
+    #signup {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    #signup:hover {
+        border-bottom: 1.5px solid black;
+    }
+    
+    #cart {
+        height: 100%;
+        /* border: 1px solid red; */
+        display: flex;
+        align-items: center;
+        width: 44px;
+        justify-content: center;
+    }
+    
+    #cart:hover {
+        border-bottom: 1.5px solid black;
+    }
+    
+    #questions {
+        width: 100%;
+        height: 72px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 13px;
+        border-bottom: 1px solid silver;
+        font-weight: bold;
+        padding-top: 60px;
+    }
+    
+    #questions::after {
+        content: "*";
+        display: flex;
+        vertical-align: super;
+        font-weight: bold;
+        text-decoration: underline;
+        /* border: 1px solid red; */
+        /* height: 8px; */
+    }
+    
+    #login-popup {
+        width: 100%;
+        height: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 0 12px;
+    }
+    
+    #head {
+        width: 100%;
+        text-align: center;
+        margin: 0 0 24px;
+        height: 26px;
+        font-size: 26px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+    
+    #head~p {
+        width: 363.219px;
+        height: 22.073px;
+        margin: 0 0 24px;
+    }
+    
+    #head~button {
+        width: 265px;
+        height: 44px;
+        margin: 0 0 18px;
+        font-size: 13px;
+        color: white;
+        background-color: black;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        letter-spacing: 3px;
+        font-weight: bold;
+        border-radius: 3px;
+        border: 0;
+    }
+    
+    #head~button:hover {
+        background-color: #666666;
+    }
+    
+    #calls {
+        width: 100%;
+        height: 46px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        border-top: 1px solid silver;
+        border-bottom: 1px solid silver;
+    }
+    
+    #calls>div {
+        display: flex;
+        gap: 10px;
+    }
+    
+    #footer {
+        background-color: #F0F1F2;
+        width: 100%;
+        height: 500px;
+        padding: 48px 48px 0;
+        display: flex;
+        gap: 100px;
+    }
+    
+    h3 {
+        height: 15.99px;
+        margin: 0 0 8px;
+        font-size: 13px;
+    }
+    
+    #relevant-info {
+        height: auto;
+    }
+    
+    #relevant-info>div {
+        display: flex;
+    }
+    
+    #relevant-info>div>div {
+        width: 214px;
+        padding: 0 12px;
+    }
+    
+    #relevant-info>div>div>p {
+        height: 18.67px;
+        font-size: 13px;
+        margin: 0 0 8px;
+    }
+    
+    #relevant-info>div>div>p:hover {
+        text-decoration: underline;
+    }
+    
+    #relevant-info>div>div:last-child>p:nth-child(5),
+    #relevant-info>div>div:last-child>p:nth-child(9) {
+        margin-bottom: 25px
+    }
+    
+    #subscribe {
+        width: 360px;
+    }
+    
+    #bar {
+        display: flex;
+    }
+    
+    #subscribe>p {
+        color: grey;
+        font-size: 13px;
+    }
+    
+    #bar>div {
+        font-size: 13px;
+        color: grey;
+        background-color: white;
+        height: 36px;
+        width: 276.52px;
+        display: flex;
+        justify-content: flex-start;
+        padding-left: 10px;
+        align-items: center;
+    }
+    
+    #bar>button {
+        color: white;
+        background-color: black;
+        border: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100px;
+        height: 36px;
+        padding: 0 12px;
+        letter-spacing: 1px;
+        font-size: 12px;
+        font-weight: bold;
+    }
+    
+    #bar>button:hover {
+        background-color: #222222;
+    }
+    
+    #social-media {
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    #icons {
+        display: flex;
+        gap: 20px;
+        margin: 20px 0;
+        height: 44px;
+    }
+    
+    #yayy {
+        display: flex;
+        gap: 10px;
+    }
+    
+    #social-media>div:last-child {
+        color: grey;
+        font-size: 13px;
+        margin: 24px 0 0;
+    }
+    
+    .add-shadow {
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+    }
+    /* Scroll to top */
+    
+    #myBtn {
+        display: none;
+        /* Hidden by default */
+        position: fixed;
+        /* Fixed/sticky position */
+        bottom: 20px;
+        /* Place the button at the bottom of the page */
+        right: 30px;
+        /* Place the button 30px from the right */
+        z-index: 99;
+        /* Make sure it does not overlap */
+        border: none;
+        /* Remove borders */
+        outline: none;
+        /* Remove outline */
+        background-color: red;
+        /* Set a background color */
+        color: white;
+        /* Text color */
+        cursor: pointer;
+        /* Add a mouse pointer on hover */
+        padding: 15px;
+        /* Some padding */
+        border-radius: 10px;
+        /* Rounded corners */
+        font-size: 18px;
+        /* Increase font size */
+    }
+    
+    #myBtn:hover {
+        background-color: #555;
+        /* Add a dark-grey background on hover */
+    }
+    /* ends */
+</style>
+
+<body>
+    <!-- Scroll to top -->
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    <!-- Navbar -->
+    <div id="navbar">
+        <div id="logo">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5KK9ADgSi2BO9dOLPH3epWfEeLe4m-RzqYPb7YLcjW7MArQu19_sXSS3jhXy807JJOg&usqp=CAU" alt="">
+        </div>
+        <div id="menu">
+            <div>New</div>
+            <div>Women</div>
+            <div>Men</div>
+            <div>Kids</div>
+            <div>Swim</div>
+            <div>Cashmere</div>
+            <div>Home</div>
+            <div>Stories</div>
+            <div id="sale">Sale</div>
+        </div>
+        <div id="search">
+            <i style="color: black;" class="fa-solid fa-magnifying-glass"></i> Search J.Crew
+        </div>
+        <div id="signup">
+            Sign In
+        </div>
+        <div id="cart">
+            <i class="fa-solid fa-bag-shopping"></i>
+        </div>
+    </div>
+    <div id="questions">
+        Have a question? We can help.
+    </div>
+    <!-- CONTENT STARTS -->
+
+    <!-- CONTENT ENDS -->
+    <div id="calls">
+        <div>
+            <div>
+                <i class="fa-brands fa-twitter"></i>
+            </div>
+            <div>
+                @jcrew_help
+            </div>
+        </div>
+        <div>
+            <div>
+                <i class="fa-solid fa-phone"></i>
+            </div>
+            <div>
+                1 434 385 5775
+            </div>
+        </div>
+        <div>
+            <div>
+                <i class="fa-solid fa-envelope"></i>
+            </div>
+            <div>
+                Email us
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <div id="relevant-info">
+            <div id="lafda">
+                <div>
+                    <h3>Help</h3>
+                    <p>Customer Service</p>
+                    <p>Track Order</p>
+                    <p>Returns & Exchanges</p>
+                    <p>Shopping</p>
+                    <p>International Orders</p>
+                    <p>Contact Us</p>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <p>Find a Store</p>
+                    <p>Size Charts</p>
+                    <p>Offers & Promotions</p>
+                    <p>My Favorites</p>
+                </div>
+                <div>
+                    <h3>About J.Crew</h3>
+                    <p>Our Story</p>
+                    <p>Careers</p>
+                    <p>Social Responsibility</p>
+                    <p class="double">California Transparency Act/Modern Slavery Act</p>
+                    <p>Investor Relations</p>
+                    <p>Terms of Use</p>
+                    <p>Privacy Policy</p>
+                    <p class="double">California Do Not Sell My Personal Information</p>
+                    <p>Diversity, Equity, and Inclusion at J.Crew Group</p>
+                </div>
+            </div>
+            <div id="social-media">
+                <div id="icons">
+                    <div>
+                        <i class="fa-brands fa-instagram"></i>
+                    </div>
+                    <div>
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </div>
+                    <div>
+                        <i class="fa-brands fa-twitter"></i>
+                    </div>
+                    <div>
+                        <i class="fa-brands fa-linkedin"></i>
+                    </div>
+                    <div>
+                        <i class="fa-brands fa-pinterest"></i>
+                    </div>
+                    <div>
+                        <i class="fa-brands fa-youtube"></i>
+                    </div>
+                </div>
+                <div id="country">
+                    India <img style="margin-left: 10px;" width="21px" height="14px" src="https://images.cricket.com/teams/4_flag_safari.png" alt="">
+                </div>
+                <div id="yayy">
+                    <div>
+                        <img width="70px" height="24px" src="./ma7841m065-madewell-logo-madewell-friendly-center.png" alt=" ">
+                    </div>
+                    <div>
+                        <img width="67px" height="24px" src="https://www.pngitem.com/pimgs/m/347-3471568_crew-factory-j-crew-factory-logo-hd-png.png " alt=" ">
+                    </div>
+                </div>
+                <div>
+                    © 2022 J.Crew
+                </div>
+            </div>
+        </div>
+        <div id="subscribe">
+            <h3>Like Being First?</h3>
+            <p>Get can't-miss style news, before everybody else.</p>
+            <div id="bar">
+                <div>Enter your email</div>
+                <button>SIGN UP</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+<script>
+    window.addEventListener('scroll', (e) => {
+        const nav = document.querySelector('#navbar');
+        if (window.pageYOffset > 0) {
+            nav.classList.add("add-shadow");
+        } else {
+            nav.classList.remove("add-shadow");
+        }
+    });
+    var mybutton = document.getElementById("myBtn");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function() {
+        scrollFunction()
+    };
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
