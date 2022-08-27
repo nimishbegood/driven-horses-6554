@@ -25,7 +25,7 @@
         display: flex;
         gap: 40px;
         font-size: 14px;
-        z-index: 10px;
+        z-index: 10;
         position: fixed;
         background-color: white;
     }
@@ -410,7 +410,7 @@
     </a>
     <!-- ends -->
     <div id="navbar">
-        <div id="logo">
+        <div id="logo" onclick="toHomePage()">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5KK9ADgSi2BO9dOLPH3epWfEeLe4m-RzqYPb7YLcjW7MArQu19_sXSS3jhXy807JJOg&usqp=CAU" alt="">
         </div>
         <div id="menu">
@@ -430,7 +430,7 @@
         <div id="signup">
             Hi, Nimish <i style="margin-left: 5px;" class="fa-solid fa-caret-down"></i>
         </div>
-        <div id="cart">
+        <div id="cart" onclick="toCart()">
             <i class="fa-solid fa-bag-shopping"></i>
         </div>
     </div>
@@ -582,4 +582,12 @@
             top.classList.remove("active");
         }
     });
+
+    function toHomePage() {
+        location.href = "./homepage.html"
+    }
+
+    function toCart() {
+        location.href = "./cart.html"
+    }
 </script>

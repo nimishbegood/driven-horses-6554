@@ -428,6 +428,7 @@
         background-color: white;
         border: 2px solid #979797;
         padding: 8.635px 0;
+        cursor: pointer;
     }
     
     #shop>p {
@@ -478,7 +479,7 @@
     }
     
     #loveWhat>div:nth-child(1) {
-        background-image: url("https://www.jcrew.com/s7-img-facade/BE554_BL7780?wid=376");
+        background-image: url("https://www.jcrew.com/s7-img-facade/BE554_YD1963?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=850&hei=850");
         background-position: center;
         background-size: 200.31px 200.31px;
     }
@@ -528,6 +529,7 @@
     #hide:hover {
         opacity: 1;
         transition: 0.2s ease-in;
+        cursor: pointer;
     }
     
     #hide>p {
@@ -612,7 +614,7 @@
         <div id="signup">
             Hi, Nimish <i style="margin-left: 5px;" class="fa-solid fa-caret-down"></i>
         </div>
-        <div id="cart">
+        <div id="cart" onclick="toCart()">
             <i class="fa-solid fa-bag-shopping"></i>
         </div>
     </div>
@@ -670,7 +672,7 @@
             <div class="heart">
                 <img src="./heart-3510.png" alt="">
             </div>
-            <div id="hide">
+            <div id="hide" onclick="toProduct()">
                 <p>Tall Baird McNutt Irish linen shirt </p>
                 <p>INR 11,959.00</p>
                 <p>select color INR 9,352.00</p>
@@ -899,5 +901,13 @@
         slides[slideIndex - 1].style.display = "block";
         slides[slideIndex - 1].style.transition = "fade";
         setTimeout(showSlides, 1500); // Change image every 2 seconds
+    }
+
+    function toCart() {
+        location.href = "./cart.html"
+    }
+
+    function toProduct() {
+        location.href = "./product.html";
     }
 </script>

@@ -259,7 +259,7 @@
         font-size: 13px;
         color: grey;
         background-color: white;
-        height: 36px;
+        height: 34px;
         width: 276.52px;
         display: flex;
         justify-content: flex-start;
@@ -270,7 +270,7 @@
     #bar>button {
         color: white;
         background-color: black;
-        border: 0;
+        border: none;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -352,99 +352,176 @@
     /* ends */
     /* content */
     
-    #where-am-i {
-        width: 90%;
-        margin: 30px auto;
-        font-size: 12px;
-        letter-spacing: 1px;
-        font-weight: 600;
-    }
-    
-    #about {
+    #content {
+        width: 100%;
+        padding: 24px;
+        background-color: #F8F8F8;
         display: flex;
-        width: 90%;
-        margin: auto;
-        justify-content: space-between;
+        justify-content: center;
     }
     
-    #data {
-        width: 360px;
-        height: 660px;
+    #left {
+        width: 642px;
+        margin-right: 24px;
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
+        gap: 28px;
     }
     
-    #data>p {
+    #left>div {
+        background-color: white;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    }
+    
+    #header1 {
+        display: flex;
+        color: grey;
+        gap: 20px;
+        align-items: center;
+        padding: 0 20px;
+        border-bottom: 1px solid #ddd;
+    }
+    
+    #header1>h1 {
+        color: black;
+        font-size: 16px;
+    }
+    /* #header1~div {
+        width: 642px;
+        height: 144px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    } */
+    
+    #header>#info {
+        width: 100%;
+        height: 21px;
+        background-color: #F8F8F8;
+    }
+    
+    #max {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 20px 0;
+    }
+    
+    #max>div:nth-child(2) {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    #max>div>p {
         margin: 0;
     }
     
-    #data>p:first-child {
-        font-size: 10px;
-        font-weight: 700;
-        letter-spacing: 1px;
-        margin: 12px 0;
+    #max>div:nth-child(2)>div {
+        display: flex;
+        color: #666666;
+        justify-content: space-between;
     }
     
-    #data>p:nth-child(2) {
-        font-size: 16px;
-    }
-    
-    #data>p:nth-child(3) {
-        margin: 5px 0 14px;
-        font-size: 10px;
-    }
-    
-    #data>p:last-of-type {
-        margin: 0 0 12px;
-    }
-    
-    #data>p:last-child>u {
+    #max>div:nth-child(2)>div>p {
         font-size: 12px;
-    }
-    
-    #cost {
-        width: 100%;
-        margin: 12px 0;
-        font-weight: bold;
-        letter-spacing: 1px;
-    }
-    
-    #cost>.price:last-child>p {
-        color: #DC3737;
-        font-weight: 400;
-    }
-    
-    #cost>.price:last-child>p:after {
-        content: "INR 9,353.00-INR 11,960.00";
-        font-weight: bold;
-    }
-    
-    #finally>p {
-        color: #767676;
-        font-size: 14px;
-        font-style: italic;
         font-weight: 500;
         letter-spacing: 1px;
-        margin: 0 0 5px;
-    }
-    
-    #bag {
-        width: 360px;
-        height: 44px;
-        color: white;
-        background-color: black;
-        font-size: 14px;
-        letter-spacing: 1px;
-        font-weight: 700;
+        margin: 0;
         cursor: pointer;
-        border: none;
     }
     
-    #bag:hover {
-        color: black;
-        background-color: #767676;
+    #max>div:last-child>p:first-of-type {
+        text-decoration: line-through;
+        color: #666666;
+    }
+    
+    #max>div:last-child>p:last-of-type {
+        color: #DC3737;
+    }
+    
+    #saved {
+        width: 642px;
+        height: 164px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .empty {
+        width: 309px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        background-color: white;
+        width: 403px;
+        padding: 24px 12px;
+    }
+    
+    #yippie {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    #yippie>p {
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+    }
+    
+    #check-it-out {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        text-align: center;
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 1px;
+    }
+    
+    #proceed {
+        color: white;
+        width: 100%;
+        font-weight: bold;
+        border: none;
+        height: 44px;
+        padding: 12px 10px;
+        font-size: 14px;
+        margin: 10px 0;
+        background-color: #0161FF;
+        cursor: pointer;
+    }
+    
+    #proceed:hover {
+        background-color: #0161FF;
+        opacity: 50%;
+    }
+    
+    #disclaimer {
+        font-size: 12px;
+        line-height: 20px;
+        letter-spacing: 1px;
+    }
+    
+    #estimate {
+        font-size: 16px;
+        font-weight: bold;
+        letter-spacing: 1px;
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    #estimate>div {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        margin: 0 0 30px;
+    }
+    
+    #estimate>div>p {
+        margin: 0;
+    }
+    
+    #promo {
+        border-top: 1px solid silver;
     }
     /* ends */
 </style>
@@ -484,55 +561,76 @@
         Have a question? We can help.
     </div>
     <!-- CONTENT STARTS -->
-    <div id="where-am-i">
-        <p>
-            Home / Men / All Clothing / Casual Shirts
-        </p>
-    </div>
-    <div id="about">
-        <div>
-            <img width="660px" height="660px" src="https://www.jcrew.com/s7-img-facade/BE554_YD1963?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=850&hei=850" alt="">
-        </div>
-        <div id="data">
-            <p>
-                BEST SELLER
-            </p>
-            <p>
-                Baird McNutt Irish linen shirt
-            </p>
-            <p>
-                Item BE554
-            </p>
-            <p>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <u style="color: #767676;">3 Reviews</u>
-            </p>
-            <div id="cost">
-                <div class="price">
-                    <p>
-                        INR 11,960.00-INR 13,096.00
-                    </p>
+    <div id="content">
+        <div id="left">
+            <div>
+                <div id="header1">
+                    <h1>SHOPPING BAG</h1> 1 item
                 </div>
-                <div class="price">
-                    <p>
-                        Select Colors
-                    </p>
+                <div id="max">
+                    <div>
+                        <img width="120px" height="120px" src="https://www.jcrew.com/s7-img-facade/BE554_YD1963?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&wid=408&hei=408" alt="">
+                    </div>
+                    <div>
+                        <p>Tall Baird McNutt Irish linen shirt</p>
+                        <p>Item BE560</p>
+                        <p><b>Size: </b>XX-Large/Tall</p>
+                        <p><b>Color:</b>Daniel Ivory Green</p>
+                        <div>
+                            <p onclick="toCart()">Remove</p>
+                            <p onclick="savedForLater()">Save for Later</p>
+                            <p onclick="toProductPage()">Edit</p>
+                        </div>
+                    </div>
+                    <div>
+                        <p>
+                            INR 13,109.00
+                        </p>
+                        <p>
+                            INR 11,972.00
+                        </p>
+                    </div>
                 </div>
             </div>
             <div>
-                <img style="margin:12px 0 30px" width="360px" src="./bleh.png" alt="">
-            </div>
-            <div id="finally">
-                <p>Prices include duties and taxes</p>
-                <button id="bag" onclick="toFullCart()">ADD TO BAG</button>
+                <div id="header1">
+                    <h1>SAVED FOR LATER</h1> 0 item
+                </div>
+                <div id="saved">
+                    Your Saved for Later is empty
+                </div>
             </div>
         </div>
-
+        <div class="empty">
+            <div id="yippie">
+                <p>Item Subtotal</p>
+                <p>INR 11,972.00</p>
+            </div>
+            <div id="estimate">
+                <p>Estimated Total</p>
+                <div>
+                    <p>INR</p>
+                    <p>11,972.00</p>
+                </div>
+            </div>
+            <div id="check-it-out">
+                Shipping calculated in checkout
+            </div>
+            <button id="proceed">
+                CHECK OUT NOW
+            </button>
+            <p id="disclaimer">
+                By clicking ‘Check Out Now’, you will be redirected to the ESW checkout page where payment will be taken and your order fulfilled by ESW, J.Crew's preferred partner for international sales.
+            </p>
+            <div id="promo">
+                <p>Add a promo</p>
+                <div id="bar">
+                    <div style="border: 1px solid black;">Promo</div>
+                    <button>APPLY</button>
+                </div>
+            </div>
+        </div>
     </div>
-
     <!-- CONTENT ENDS -->
     <div id="calls">
         <div>
@@ -659,7 +757,11 @@
         location.href = "./homepage.html"
     }
 
-    function toFullCart() {
-        location.href = "./cart-full.html"
+    function toCart() {
+        location.href = "./cart.html"
+    }
+
+    function toProductPage() {
+        location.href = "./product.html"
     }
 </script>

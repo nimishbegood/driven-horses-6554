@@ -25,7 +25,7 @@
         display: flex;
         gap: 40px;
         font-size: 14px;
-        z-index: 10px;
+        z-index: 10;
         position: fixed;
         background-color: white;
     }
@@ -111,6 +111,7 @@
         width: 44px;
         justify-content: center;
         font-size: 18px;
+        cursor: pointer;
     }
     
     #cart:hover {
@@ -424,7 +425,7 @@
         margin: 10px auto 12px;
     }
     
-    form {
+    #form {
         width: 327px;
         /* height: 265.667px; */
         padding: 12px 24px 24px;
@@ -530,7 +531,7 @@
                 <i class="fa-solid fa-xmark"></i>
             </div>
         </div>
-        <form action="submit">
+        <div id="form">
             <input type="email" id="email" placeholder="Email Address*">
             <input type="password" id="password" placeholder="Password*">
             <div id="remember">
@@ -541,13 +542,13 @@
                 </div>
                 <div>Forgot Password?</div>
             </div>
-            <button id="form-button">
+            <button id="form-button" onclick="goToHomePage()">
                 SIGN IN NOW
             </button>
             <div id="captcha">
                 This site is protected by reCAPTCHA and the Google <u>Privacy Policy</u> and <u>Terms of Service</u> apply.
             </div>
-        </form>
+        </div>
         <div id="footSign">
             <p>
                 Don't have an account? <a href="#" id="yahtzee">Sign up now</a>
@@ -583,7 +584,7 @@
             <div id="signup" onclick="toggle()">
                 Sign In
             </div>
-            <div id="cart">
+            <div id="cart" onclick="toCart()">
                 <i class="fa-solid fa-bag-shopping"></i>
             </div>
         </div>
@@ -723,5 +724,15 @@
         blur.classList.toggle("active");
         var popup = document.getElementById("popup");
         popup.classList.toggle("active");
+    }
+
+
+    function goToHomePage() {
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+        localStorage.setItem("email", email);
+        localStorage.setItem("password", password);
+        location.href = "./homepage.html"
+
     }
 </script>
