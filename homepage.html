@@ -25,7 +25,7 @@
         display: flex;
         gap: 40px;
         font-size: 14px;
-        z-index: 10px;
+        z-index: 10;
         position: fixed;
         background-color: white;
     }
@@ -35,6 +35,7 @@
         justify-content: center;
         align-items: center;
         width: 114px;
+        cursor: pointer;
         /* border: 1px solid teal; */
     }
     
@@ -48,15 +49,16 @@
         /* border: 1px solid red; */
         display: flex;
         align-items: center;
-        gap: 25px;
+        gap: 20px;
         height: 100%;
-        margin-right: 120px;
+        margin-right: 100px;
     }
     
     #menu>div {
         height: 100%;
         display: flex;
         align-items: center;
+        font-weight: 500;
         /* border: 1px solid red; */
     }
     
@@ -80,6 +82,7 @@
         align-items: center;
         gap: 20px;
         color: grey;
+        font-weight: 500;
         padding: 0 12px;
     }
     
@@ -92,6 +95,8 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        font-weight: 500;
+        cursor: pointer;
     }
     
     #signup:hover {
@@ -105,6 +110,8 @@
         align-items: center;
         width: 44px;
         justify-content: center;
+        font-size: 18px;
+        cursor: pointer;
     }
     
     #cart:hover {
@@ -170,6 +177,7 @@
         font-weight: bold;
         border-radius: 3px;
         border: 0;
+        cursor: pointer;
     }
     
     #head~button:hover {
@@ -273,6 +281,7 @@
         letter-spacing: 1px;
         font-size: 12px;
         font-weight: bold;
+        cursor: pointer;
     }
     
     #bar>button:hover {
@@ -306,51 +315,285 @@
     .add-shadow {
         box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
     }
+    /* Back to top  */
     /* Scroll to top */
     
-    #myBtn {
-        display: none;
-        /* Hidden by default */
+    .to-top {
+        background-color: white;
         position: fixed;
-        /* Fixed/sticky position */
-        bottom: 20px;
-        /* Place the button at the bottom of the page */
-        right: 30px;
-        /* Place the button 30px from the right */
-        z-index: 99;
-        /* Make sure it does not overlap */
-        border: none;
-        /* Remove borders */
-        outline: none;
-        /* Remove outline */
-        background-color: red;
-        /* Set a background color */
-        color: white;
-        /* Text color */
-        cursor: pointer;
-        /* Add a mouse pointer on hover */
-        padding: 15px;
-        /* Some padding */
-        border-radius: 10px;
-        /* Rounded corners */
-        font-size: 18px;
-        /* Increase font size */
+        bottom: 16px;
+        right: 32px;
+        width: 44px;
+        height: 44px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 32px;
+        color: #222222;
+        text-decoration: none;
+        opacity: 0;
+        pointer-events: none;
+        transition: all .4s;
     }
     
-    #myBtn:hover {
-        background-color: #555;
-        /* Add a dark-grey background on hover */
+    .to-top:hover {
+        color: white;
+        background-color: #222222;
+    }
+    
+    .to-top.active {
+        bottom: 32px;
+        pointer-events: auto;
+        opacity: 1;
+    }
+    
+    html {
+        scroll-behavior: smooth;
     }
     /* ends */
+    /* ends */
+    
+    #slideBox {
+        width: 100%;
+        height: 620px;
+        display: flex;
+    }
+    
+    #slideBox>div {
+        width: 50%;
+        height: 620px;
+    }
+    
+    #slideBox>div>img {
+        width: 100%;
+        height: 620px;
+    }
+    
+    .image {
+        animation-name: fade;
+        animation-duration: 1.5s;
+    }
+    
+    @keyframes fade {
+        from {
+            opacity: .4
+        }
+        to {
+            opacity: 1
+        }
+    }
+    
+    .image>img {
+        width: 100%;
+        height: 620px;
+    }
+    
+    #grid {
+        width: 100%;
+        padding: 0 6%;
+        margin: 40px auto 20px;
+    }
+    
+    #grid>div>img {
+        width: 1091.2px;
+        height: 2046px;
+        cursor: pointer;
+    }
+    
+    #fall {
+        width: 100%;
+        height: 396.792px;
+        margin: 40px auto 0;
+    }
+    
+    #fall>img {
+        width: 100%;
+        height: 396.792px;
+    }
+    
+    #shop {
+        display: flex;
+        width: 1192px;
+        height: 59.59px;
+        align-items: center;
+        margin: 30px auto;
+        justify-content: center;
+    }
+    
+    #shop>button {
+        color: black;
+        margin: 0 10px;
+        width: 124px;
+        height: 39.77px;
+        background-color: white;
+        border: 2px solid #979797;
+        padding: 8.635px 0;
+    }
+    
+    #shop>p {
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-size: 31.833px;
+        font-weight: 400;
+        letter-spacing: 1px;
+    }
+    
+    #love {
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        text-align: center;
+        font-size: 36px;
+        font-weight: 300;
+    }
+    
+    #yass {
+        font-size: 18px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-weight: 400;
+        letter-spacing: 1px;
+        margin-top: -20px;
+        text-align: center;
+    }
+    
+    #loveWhat {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    #loveWhat>div {
+        width: 200.31px;
+        height: 200.31px;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+    
+    .heart {
+        display: flex;
+        justify-content: flex-end;
+    }
+    
+    #loveWhat>div>.heart>img {
+        width: 24px;
+        height: 24px;
+        margin: 10px;
+    }
+    
+    #loveWhat>div:nth-child(1) {
+        background-image: url("https://www.jcrew.com/s7-img-facade/BE554_BL7780?wid=376");
+        background-position: center;
+        background-size: 200.31px 200.31px;
+    }
+    
+    #loveWhat>div:nth-child(2) {
+        background-image: url("https://www.jcrew.com/s7-img-facade/BF679_DM6035?wid=376");
+        background-position: center;
+        background-size: 200.31px 200.31px;
+    }
+    
+    #loveWhat>div:nth-child(3) {
+        background-image: url("https://www.jcrew.com/s7-img-facade/L6602_BK0001_m?wid=376");
+        background-position: center;
+        background-size: 200.31px 200.31px;
+    }
+    
+    #loveWhat>div:nth-child(4) {
+        background-image: url("https://www.jcrew.com/s7-img-facade/BF168_GR7106?wid=376");
+        background-position: center;
+        background-size: 200.31px 200.31px;
+    }
+    
+    #loveWhat>div:nth-child(5) {
+        background-image: url("https://www.jcrew.com/s7-img-facade/BF450_GY5218_m?wid=376");
+        background-position: center;
+        background-size: 200.31px 200.31px;
+    }
+    
+    #loveWhat>div:nth-child(6) {
+        background-image: url("https://www.jcrew.com/s7-img-facade/AZ955_EE0615?wid=376");
+        background-position: center;
+        background-size: 200.31px 200.31px;
+    }
+    
+    #hide {
+        width: 200.312px;
+        height: 97.188px;
+        background-color: hsla(0, 0%, 100%, .8);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        opacity: 0;
+    }
+    
+    #hide:hover {
+        opacity: 1;
+        transition: 0.2s ease-in;
+    }
+    
+    #hide>p {
+        width: 180.312px;
+        margin: auto;
+        display: flex;
+        margin: 0 auto;
+        align-items: center;
+        line-height: 15px;
+    }
+    
+    #hide>p:first-child {
+        font-size: 14px;
+        font-weight: bold;
+        color: black;
+        letter-spacing: 0.5px;
+    }
+    
+    #hide>p:last-child {
+        color: #DC3737;
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: 1px;
+    }
+    
+    #final {
+        display: flex;
+        justify-content: space-between;
+        margin: 30px 0;
+    }
+    
+    #final>div {
+        height: 231.21px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    #final>div>img {
+        width: 100%;
+        height: 200.312px;
+    }
+    
+    #final>div>p {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 2px solid black;
+        font-size: 11px;
+        width: fit-content;
+        letter-spacing: 1px;
+        font-weight: 700;
+    }
 </style>
 
 <body>
     <!-- Scroll to top -->
-    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
-    <!-- Navbar -->
+    <a href="#" class="to-top">
+        <i class="fa-solid fa-angle-up"></i>
+    </a>
+    <!-- ends -->
     <div id="navbar">
-        <div id="logo">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5KK9ADgSi2BO9dOLPH3epWfEeLe4m-RzqYPb7YLcjW7MArQu19_sXSS3jhXy807JJOg&usqp=CAU" alt="">
+        <div id="logo" onclick="toHomePage()">
+            <img width="100%" height="100%" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5KK9ADgSi2BO9dOLPH3epWfEeLe4m-RzqYPb7YLcjW7MArQu19_sXSS3jhXy807JJOg&usqp=CAU" alt="">
         </div>
         <div id="menu">
             <div>New</div>
@@ -367,7 +610,7 @@
             <i style="color: black;" class="fa-solid fa-magnifying-glass"></i> Search J.Crew
         </div>
         <div id="signup">
-            Sign In
+            Hi, Nimish <i style="margin-left: 5px;" class="fa-solid fa-caret-down"></i>
         </div>
         <div id="cart">
             <i class="fa-solid fa-bag-shopping"></i>
@@ -377,7 +620,144 @@
         Have a question? We can help.
     </div>
     <!-- CONTENT STARTS -->
+    <div id="slideBox">
+        <div>
+            <img src="./screenshot (8).png" alt="">
+        </div>
+        <div class="slideShowContainer">
+            <div class="image">
+                <img src="./screenshot (10).png" alt="">
+            </div>
+            <div class="image">
+                <img src="https://www.jcrew.com/brand_creative/homepage2022/09-Sep2/v2/2022sep_0823_hp_w_img0d.jpg" alt="">
+            </div>
+            <div class="image">
+                <img src="https://www.jcrew.com/brand_creative/homepage2022/09-Sep2/v2/2022sep_0823_hp_w_img0e.jpg" alt="">
+            </div>
+            <div class="image">
+                <img src="https://www.jcrew.com/brand_creative/homepage2022/09-Sep2/v2/2022sep_0823_hp_w_img0c.jpg" alt="">
+            </div>
+            <div class="image">
+                <img src="https://www.jcrew.com/brand_creative/homepage2022/09-Sep2/v2/2022sep_0823_hp_w_img0b.jpg" alt="">
+            </div>
+        </div>
+    </div>
+    <div id="grid">
+        <div>
+            <img src="./meh.png" alt="">
+        </div>
+    </div>
+    <div id="fall">
+        <img src="./fall.png" alt="">
+    </div>
+    <div id="shop">
+        <p>
+            Shop New Arrivals
+        </p>
+        <button>Shop Women</button>
+        <button>Shop Men</button>
+        <button>Shop Girls</button>
+        <button>Shop Boys</button>
+    </div>
+    <div style="cursor: pointer;margin:30px 0">
+        <img width="1240px" height="2102.830px" src="./bluue.png" alt="">
+    </div>
+    <div id="love">
+        <p>You'll Also Love</p>
+    </div>
+    <div id="loveWhat">
+        <div>
+            <div class="heart">
+                <img src="./heart-3510.png" alt="">
+            </div>
+            <div id="hide">
+                <p>Tall Baird McNutt Irish linen shirt </p>
+                <p>INR 11,959.00</p>
+                <p>select color INR 9,352.00</p>
+            </div>
+        </div>
+        <div>
+            <div class="heart">
+                <img src="./heart-3510.png" alt="">
+            </div>
+            <div id="hide">
+                <p>Petite tall-leg denim trouser in Pearl Street wash</p>
+                <p style="text-decoration: line-through;">INR 19,776.00</p>
+                <p>INR 10,022.00 (49% off)</p>
+            </div>
+        </div>
+        <div>
+            <div class="heart">
+                <img src="./heart-3510.png" alt="">
+            </div>
+            <div id="hide">
+                <p>Tall resume dress in stretch linen</p>
+                <p>INR 22,448.00</p>
+                <p>select colors INR 17,102.00-INR 20,175</p>
+            </div>
+        </div>
+        <div>
+            <div class="heart">
+                <img src="./heart-3510.png" alt="">
+            </div>
+            <div id="hide">
+                <p>Ruche high-rise full-coverage bikini-bottom</p>
+                <p>INR 8,681.00</p>
+                <p></p>
+            </div>
+        </div>
+        <div>
+            <div class="heart">
+                <img src="./heart-3510.png" alt="">
+            </div>
+            <div id="hide">
+                <p>Relaxed perfect lightweight jacket</p>
+                <p style="text-decoration: line-through;">INR 22,441.00</p>
+                <p>INR 13,291.00 (41% off) </p>
+            </div>
+        </div>
+        <div>
+            <div class="heart">
+                <img src="./heart-3510.png" alt="">
+            </div>
+            <div id="hide">
+                <p>New Balance® 2002R sneakers</p>
+                <p>INR 18,707.00</p>
+                <p></p>
+            </div>
+        </div>
 
+    </div>
+    <div id="love">
+        <p>More you need to see</p>
+    </div>
+    <div id="final">
+        <div>
+            <img src="https://www.jcrew.com/s7-img-facade/BK961_GR7805_m?wid=416" alt="">
+            <p>Shop Women's Dresses & Jumpsuits</p>
+        </div>
+        <div>
+            <img src="https://www.jcrew.com/s7-img-facade/BL084_PT0317_m?wid=416" alt="">
+            <p>Shop Women's Shirts & Tops</p>
+        </div>
+        <div>
+            <img src="https://www.jcrew.com/s7-img-facade/BJ571_NA6157_m?wid=416" alt="">
+            <p>Shop Women's Sweaters</p>
+        </div>
+        <div>
+            <img src="https://www.jcrew.com/s7-img-facade/BJ987_BL7755_m?wid=416" alt="">
+            <p>Shop Women's Blazers</p>
+        </div>
+        <div>
+            <img src="https://www.jcrew.com/s7-img-facade/BK251_BK0001_m?wid=416" alt="">
+            <p>Shop Women's Pants</p>
+        </div>
+        <div>
+            <img src="https://www.jcrew.com/s7-img-facade/BK656_DM6650_m?wid=416" alt="">
+            <p>Shop Women's Denim</p>
+        </div>
+
+    </div>
     <!-- CONTENT ENDS -->
     <div id="calls">
         <div>
@@ -489,31 +869,35 @@
 </html>
 <script>
     window.addEventListener('scroll', (e) => {
-        const nav = document.querySelector('#navbar');
+        var nav = document.querySelector('#navbar');
+        var top = document.querySelector(".to-top");
         if (window.pageYOffset > 0) {
             nav.classList.add("add-shadow");
+            top.classList.add("active");
         } else {
             nav.classList.remove("add-shadow");
+            top.classList.remove("active");
         }
     });
-    var mybutton = document.getElementById("myBtn");
 
-    // When the user scrolls down 20px from the top of the document, show the button
-    window.onscroll = function() {
-        scrollFunction()
-    };
-
-    function scrollFunction() {
-        if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
-            mybutton.style.display = "block";
-        } else {
-            mybutton.style.display = "none";
-        }
+    function toHomePage() {
+        location.href = "./homepage.html"
     }
+    let slideIndex = 0;
+    showSlides();
 
-    // When the user clicks on the button, scroll to the top of the document
-    function topFunction() {
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
+    function showSlides() {
+        let i;
+        let slides = document.getElementsByClassName("image");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {
+            slideIndex = 1
+        }
+        slides[slideIndex - 1].style.display = "block";
+        slides[slideIndex - 1].style.transition = "fade";
+        setTimeout(showSlides, 1500); // Change image every 2 seconds
     }
 </script>

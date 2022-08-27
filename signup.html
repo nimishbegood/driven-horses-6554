@@ -35,6 +35,7 @@
         justify-content: center;
         align-items: center;
         width: 114px;
+        cursor: pointer;
         /* border: 1px solid teal; */
     }
     
@@ -48,15 +49,16 @@
         /* border: 1px solid red; */
         display: flex;
         align-items: center;
-        gap: 25px;
+        gap: 20px;
         height: 100%;
-        margin-right: 120px;
+        margin-right: 130px;
     }
     
     #menu>div {
         height: 100%;
         display: flex;
         align-items: center;
+        font-weight: 500;
         /* border: 1px solid red; */
     }
     
@@ -81,6 +83,7 @@
         gap: 20px;
         color: grey;
         padding: 0 12px;
+        font-weight: 500;
     }
     
     #search:hover {
@@ -92,6 +95,8 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        font-weight: 500;
+        cursor: pointer;
     }
     
     #signup:hover {
@@ -105,6 +110,7 @@
         align-items: center;
         width: 44px;
         justify-content: center;
+        font-size: 18px;
     }
     
     #cart:hover {
@@ -170,6 +176,7 @@
         font-weight: bold;
         border-radius: 3px;
         border: 0;
+        cursor: pointer;
     }
     
     #head~button:hover {
@@ -308,180 +315,388 @@
     }
     /* Scroll to top */
     
-    #myBtn {
-        display: none;
-        /* Hidden by default */
+    .to-top {
+        background-color: white;
         position: fixed;
-        /* Fixed/sticky position */
-        bottom: 20px;
-        /* Place the button at the bottom of the page */
-        right: 30px;
-        /* Place the button 30px from the right */
-        z-index: 99;
-        /* Make sure it does not overlap */
-        border: none;
-        /* Remove borders */
-        outline: none;
-        /* Remove outline */
-        background-color: red;
-        /* Set a background color */
-        color: white;
-        /* Text color */
-        cursor: pointer;
-        /* Add a mouse pointer on hover */
-        padding: 15px;
-        /* Some padding */
-        border-radius: 10px;
-        /* Rounded corners */
-        font-size: 18px;
-        /* Increase font size */
+        bottom: 16px;
+        right: 32px;
+        width: 44px;
+        height: 44px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 32px;
+        color: #222222;
+        text-decoration: none;
+        opacity: 0;
+        pointer-events: none;
+        transition: all .4s;
     }
     
-    #myBtn:hover {
-        background-color: #555;
-        /* Add a dark-grey background on hover */
+    .to-top:hover {
+        color: white;
+        background-color: #222222;
+    }
+    
+    .to-top.active {
+        bottom: 32px;
+        pointer-events: auto;
+        opacity: 1;
+    }
+    
+    html {
+        scroll-behavior: smooth;
+    }
+    /* ends */
+    /* login-signup popup */
+    
+    #main-content.active {
+        filter: blur(1.75px);
+        pointer-events: none;
+        user-select: none;
+    }
+    
+    #popup {
+        width: 375px;
+        /* height: 480px; */
+        position: fixed;
+        z-index: 100;
+        top: 40%;
+        left: 37%;
+        margin-left: -200px;
+        margin-top: -250px;
+        transform: translate(50%, 50%);
+        background-color: white;
+        visibility: hidden;
+        opacity: 0;
+        transition: 0.5s;
+        border: 1px solid #EEEEEF;
+    }
+    
+    #popup.active {
+        top: 10%;
+        visibility: visible;
+        opacity: 1;
+        transition: 0.5s;
+        filter: blur(0);
+    }
+    
+    #close {
+        color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 44px;
+        height: 44px;
+    }
+    
+    #top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 50px;
+        width: 100%;
+    }
+    
+    #top>div>h2 {
+        font-size: 16px;
+        letter-spacing: 0.5px;
+    }
+    
+    #top>div:first-of-type {
+        width: 58%;
+        display: flex;
+        justify-content: flex-end;
+    }
+    
+    #top>div:last-of-type {
+        justify-content: center;
+    }
+    
+    #captcha {
+        width: 327px;
+        height: 32px;
+        font-size: 13px;
+        color: #767676;
+        line-height: 16px;
+        font-weight: 500;
+        letter-spacing: 0.2px;
+        margin: 10px auto 12px;
+    }
+    
+    form {
+        width: 327px;
+        /* height: 265.667px; */
+        padding: 12px 24px 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin: auto;
+    }
+    
+    #remember {
+        width: 330px;
+        height: 55.67px;
+        /* padding: 15px 0 21px; */
+        display: flex;
+        gap: 45px;
+        align-items: center;
+    }
+    
+    #tick {
+        margin-right: 6px;
+        width: 16px;
+        height: 16px;
+    }
+    
+    #remember>div {
+        display: flex;
+        align-items: center;
+    }
+    
+    #remember>div:first-child {
+        gap: 5px;
+    }
+    
+    #remember>div:last-child {
+        color: #0161FF;
+        display: flex;
+        justify-content: flex-end;
+    }
+    
+    #footSign {
+        width: 318px;
+        height: 70px;
+        padding: 24px 12px;
+        border-top: 1px solid #ddd;
+        margin: auto;
+    }
+    
+    #footSign>p {
+        text-align: center;
+        font-size: 16px;
+        font-weight: bold;
+        letter-spacing: 0.5px;
+        line-height: 21px;
+    }
+    
+    #yahtzee {
+        color: #0161FF;
+        text-decoration: none;
+    }
+    
+    #email,
+    #password {
+        width: 100%;
+        border: 1px solid silver;
+        font-size: 16px;
+        color: #000;
+        height: 42px;
+        letter-spacing: .1px;
+        font-weight: 400;
+    }
+    
+    #form-button {
+        color: white;
+        background-color: black;
+        border: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 333px;
+        height: 42px;
+        padding: 0 12px;
+        letter-spacing: 1.5px;
+        font-size: 14px;
+        font-weight: 700;
+        cursor: pointer;
+    }
+    
+    #form-button:hover {
+        color: white;
+        background-color: #666666;
     }
     /* ends */
 </style>
 
 <body>
-    <!-- Scroll to top -->
-    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
-    <!-- Navbar -->
-    <div id="navbar">
-        <div id="logo">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5KK9ADgSi2BO9dOLPH3epWfEeLe4m-RzqYPb7YLcjW7MArQu19_sXSS3jhXy807JJOg&usqp=CAU" alt="">
+    <!-- Popup -->
+    <div id="popup">
+        <div id="top">
+            <div>
+                <h2>SIGN IN</h2>
+            </div>
+            <div id="close" onclick="toggle()">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
         </div>
-        <div id="menu">
-            <div>New</div>
-            <div>Women</div>
-            <div>Men</div>
-            <div>Kids</div>
-            <div>Swim</div>
-            <div>Cashmere</div>
-            <div>Home</div>
-            <div>Stories</div>
-            <div id="sale">Sale</div>
-        </div>
-        <div id="search">
-            <i style="color: black;" class="fa-solid fa-magnifying-glass"></i> Search J.Crew
-        </div>
-        <div id="signup">
-            Sign In
-        </div>
-        <div id="cart">
-            <i class="fa-solid fa-bag-shopping"></i>
+        <form action="submit">
+            <input type="email" id="email" placeholder="Email Address*">
+            <input type="password" id="password" placeholder="Password*">
+            <div id="remember">
+                <div>
+                    <input type="checkbox" name="Remember Me" id="tick">
+                    <p>Remember Me</p>
+                    <i class="fa-solid fa-circle-info"></i>
+                </div>
+                <div>Forgot Password?</div>
+            </div>
+            <button id="form-button">
+                SIGN IN NOW
+            </button>
+            <div id="captcha">
+                This site is protected by reCAPTCHA and the Google <u>Privacy Policy</u> and <u>Terms of Service</u> apply.
+            </div>
+        </form>
+        <div id="footSign">
+            <p>
+                Don't have an account? <a href="#" id="yahtzee">Sign up now</a>
+            </p>
         </div>
     </div>
-    <div id="questions">
-        Have a question? We can help.
-    </div>
-    <div id="login-popup">
-        <h1 id="head">Please Sign In</h1>
-        <p>Please sign in to continue to your account details.</p>
-        <button>SIGN IN</button>
-    </div>
-    <div id="calls">
-        <div>
-            <div>
-                <i class="fa-brands fa-twitter"></i>
+    <!-- ends -->
+    <div id="main-content">
+
+        <!-- Scroll to top -->
+        <a href="#" class="to-top">
+            <i class="fa-solid fa-angle-up"></i>
+        </a>
+        <!-- Navbar -->
+        <div id="navbar">
+            <div id="logo">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5KK9ADgSi2BO9dOLPH3epWfEeLe4m-RzqYPb7YLcjW7MArQu19_sXSS3jhXy807JJOg&usqp=CAU" alt="">
             </div>
-            <div>
-                @jcrew_help
+            <div id="menu">
+                <div>New</div>
+                <div>Women</div>
+                <div>Men</div>
+                <div>Kids</div>
+                <div>Swim</div>
+                <div>Cashmere</div>
+                <div>Home</div>
+                <div>Stories</div>
+                <div id="sale">Sale</div>
+            </div>
+            <div id="search">
+                <i style="color: black;" class="fa-solid fa-magnifying-glass"></i> Search J.Crew
+            </div>
+            <div id="signup" onclick="toggle()">
+                Sign In
+            </div>
+            <div id="cart">
+                <i class="fa-solid fa-bag-shopping"></i>
             </div>
         </div>
-        <div>
-            <div>
-                <i class="fa-solid fa-phone"></i>
-            </div>
-            <div>
-                1 434 385 5775
-            </div>
+        <div id="questions">
+            Have a question? We can help.
         </div>
-        <div>
-            <div>
-                <i class="fa-solid fa-envelope"></i>
-            </div>
-            <div>
-                Email us
-            </div>
+        <div id="login-popup">
+            <h1 id="head">Please Sign In</h1>
+            <p>Please sign in to continue to your account details.</p>
+            <button onclick="toggle()">SIGN IN</button>
         </div>
-    </div>
-    <div id="footer">
-        <div id="relevant-info">
-            <div id="lafda">
+        <div id="calls">
+            <div>
                 <div>
-                    <h3>Help</h3>
-                    <p>Customer Service</p>
-                    <p>Track Order</p>
-                    <p>Returns & Exchanges</p>
-                    <p>Shopping</p>
-                    <p>International Orders</p>
-                    <p>Contact Us</p>
+                    <i class="fa-brands fa-twitter"></i>
                 </div>
                 <div>
-                    <h3>Quick Links</h3>
-                    <p>Find a Store</p>
-                    <p>Size Charts</p>
-                    <p>Offers & Promotions</p>
-                    <p>My Favorites</p>
-                </div>
-                <div>
-                    <h3>About J.Crew</h3>
-                    <p>Our Story</p>
-                    <p>Careers</p>
-                    <p>Social Responsibility</p>
-                    <p class="double">California Transparency Act/Modern Slavery Act</p>
-                    <p>Investor Relations</p>
-                    <p>Terms of Use</p>
-                    <p>Privacy Policy</p>
-                    <p class="double">California Do Not Sell My Personal Information</p>
-                    <p>Diversity, Equity, and Inclusion at J.Crew Group</p>
+                    @jcrew_help
                 </div>
             </div>
-            <div id="social-media">
-                <div id="icons">
-                    <div>
-                        <i class="fa-brands fa-instagram"></i>
-                    </div>
-                    <div>
-                        <i class="fa-brands fa-facebook-f"></i>
-                    </div>
-                    <div>
-                        <i class="fa-brands fa-twitter"></i>
-                    </div>
-                    <div>
-                        <i class="fa-brands fa-linkedin"></i>
-                    </div>
-                    <div>
-                        <i class="fa-brands fa-pinterest"></i>
-                    </div>
-                    <div>
-                        <i class="fa-brands fa-youtube"></i>
-                    </div>
-                </div>
-                <div id="country">
-                    India <img style="margin-left: 10px;" width="21px" height="14px" src="https://images.cricket.com/teams/4_flag_safari.png" alt="">
-                </div>
-                <div id="yayy">
-                    <div>
-                        <img width="70px" height="24px" src="./ma7841m065-madewell-logo-madewell-friendly-center.png" alt=" ">
-                    </div>
-                    <div>
-                        <img width="67px" height="24px" src="https://www.pngitem.com/pimgs/m/347-3471568_crew-factory-j-crew-factory-logo-hd-png.png " alt=" ">
-                    </div>
+            <div>
+                <div>
+                    <i class="fa-solid fa-phone"></i>
                 </div>
                 <div>
-                    © 2022 J.Crew
+                    1 434 385 5775
+                </div>
+            </div>
+            <div>
+                <div>
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+                <div>
+                    Email us
                 </div>
             </div>
         </div>
-        <div id="subscribe">
-            <h3>Like Being First?</h3>
-            <p>Get can't-miss style news, before everybody else.</p>
-            <div id="bar">
-                <div>Enter your email</div>
-                <button>SIGN UP</button>
+        <div id="footer">
+            <div id="relevant-info">
+                <div id="lafda">
+                    <div>
+                        <h3>Help</h3>
+                        <p>Customer Service</p>
+                        <p>Track Order</p>
+                        <p>Returns & Exchanges</p>
+                        <p>Shopping</p>
+                        <p>International Orders</p>
+                        <p>Contact Us</p>
+                    </div>
+                    <div>
+                        <h3>Quick Links</h3>
+                        <p>Find a Store</p>
+                        <p>Size Charts</p>
+                        <p>Offers & Promotions</p>
+                        <p>My Favorites</p>
+                    </div>
+                    <div>
+                        <h3>About J.Crew</h3>
+                        <p>Our Story</p>
+                        <p>Careers</p>
+                        <p>Social Responsibility</p>
+                        <p class="double">California Transparency Act/Modern Slavery Act</p>
+                        <p>Investor Relations</p>
+                        <p>Terms of Use</p>
+                        <p>Privacy Policy</p>
+                        <p class="double">California Do Not Sell My Personal Information</p>
+                        <p>Diversity, Equity, and Inclusion at J.Crew Group</p>
+                    </div>
+                </div>
+                <div id="social-media">
+                    <div id="icons">
+                        <div>
+                            <i class="fa-brands fa-instagram"></i>
+                        </div>
+                        <div>
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </div>
+                        <div>
+                            <i class="fa-brands fa-twitter"></i>
+                        </div>
+                        <div>
+                            <i class="fa-brands fa-linkedin"></i>
+                        </div>
+                        <div>
+                            <i class="fa-brands fa-pinterest"></i>
+                        </div>
+                        <div>
+                            <i class="fa-brands fa-youtube"></i>
+                        </div>
+                    </div>
+                    <div id="country">
+                        India <img style="margin-left: 10px;" width="21px" height="14px" src="https://images.cricket.com/teams/4_flag_safari.png" alt="">
+                    </div>
+                    <div id="yayy">
+                        <div>
+                            <img width="70px" height="24px" src="./ma7841m065-madewell-logo-madewell-friendly-center.png" alt=" ">
+                        </div>
+                        <div>
+                            <img width="67px" height="24px" src="https://www.pngitem.com/pimgs/m/347-3471568_crew-factory-j-crew-factory-logo-hd-png.png " alt=" ">
+                        </div>
+                    </div>
+                    <div>
+                        © 2022 J.Crew
+                    </div>
+                </div>
+            </div>
+            <div id="subscribe">
+                <h3>Like Being First?</h3>
+                <p>Get can't-miss style news, before everybody else.</p>
+                <div id="bar">
+                    <div>Enter your email</div>
+                    <button>SIGN UP</button>
+                </div>
             </div>
         </div>
     </div>
@@ -489,33 +704,24 @@
 </body>
 
 </html>
+
 <script>
     window.addEventListener('scroll', (e) => {
-        const nav = document.querySelector('#navbar');
+        var nav = document.querySelector('#navbar');
+        var top = document.querySelector(".to-top");
         if (window.pageYOffset > 0) {
             nav.classList.add("add-shadow");
+            top.classList.add("active");
         } else {
             nav.classList.remove("add-shadow");
+            top.classList.remove("active");
         }
     });
-    var mybutton = document.getElementById("myBtn");
 
-    // When the user scrolls down 20px from the top of the document, show the button
-    window.onscroll = function() {
-        scrollFunction()
-    };
-
-    function scrollFunction() {
-        if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
-            mybutton.style.display = "block";
-        } else {
-            mybutton.style.display = "none";
-        }
-    }
-
-    // When the user clicks on the button, scroll to the top of the document
-    function topFunction() {
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
+    function toggle() {
+        var blur = document.getElementById("main-content");
+        blur.classList.toggle("active");
+        var popup = document.getElementById("popup");
+        popup.classList.toggle("active");
     }
 </script>
